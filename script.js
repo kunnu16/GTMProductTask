@@ -5,7 +5,6 @@ const myFunction = (id) => {
   const ele = a[id];
 
   let name = ele.getElementsByClassName("name");
-  console.log(name);
   name = name[0].textContent;
   name = name.split(": ")[1];
 
