@@ -1,22 +1,23 @@
 window.dataLayer = window.datalayer || [];
 
-const myFunction1 = () => {
+const myFunction = (id) => {
+  const a = document.querySelectorAll(".card");
+  const ele = a[id];
+
+  let name = ele.getElementsByClassName("name");
+  console.log(name);
+  name = name[0].textContent;
+  name = name.split(": ")[1];
+
+  let price = ele.getElementsByClassName("price");
+  price = price[0].textContent;
+  price = price.split(": ")[1];
+
   window.dataLayer.push({
-    event: "add To Card Product1 clicked",
-  });
-};
-const myFunction2 = () => {
-  window.dataLayer.push({
-    event: "add To Card Product2  clicked",
-  });
-};
-const myFunction3 = () => {
-  window.dataLayer.push({
-    event: "add To Card  Product3 clicked",
-  });
-};
-const myFunction4 = () => {
-  window.dataLayer.push({
-    event: "add To Card Product4 clicked",
+    event: "AddToCart",
+    eventCategory: "product",
+    eventAction: "click",
+    eventLabel: name,
+    eventValue: price,
   });
 };
